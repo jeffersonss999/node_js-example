@@ -9,9 +9,8 @@ cache: npm
 addons:
   sonarcloud:
     organization: "dw1a3"
-    token:
-      secure: "**************************" # encrypted value of your token
-
+    token: ${SONAR_TOKEN}
+    
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - sonar-scanner
