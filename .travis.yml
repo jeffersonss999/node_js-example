@@ -5,12 +5,11 @@ node_js:
 - 'lts/*'
 
 cache: npm
-
 addons:
   sonarcloud:
-    organization: "dw1a3"
-    token: ${SONAR_TOKEN}
-
+    organization: "dw1a3" # the key of the org you chose at step #3
+    token:
+      secure: ${SONAR_TOKEN} # encrypted value of your token
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - sonar-scanner -X
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
